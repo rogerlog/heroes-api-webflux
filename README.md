@@ -29,3 +29,25 @@ Acessando as tabelas
 aws dynamodb list-tables --endpoint-url http://localhost:8000
 ```
 
+#### Postman
+
+- Primeira requisição GET e criação da collection retornando os dados criados no arquivo `HeroesData.java`
+
+![](.img/01.png)
+
+- Get heroes by Id
+
+![](.img/02.png)
+
+- Create new hero
+
+![](.img/03.png)
+
+
+
+- Link da collection
+
+https://documenter.getpostman.com/view/11187410/TzCL9UDd
+
+
+
