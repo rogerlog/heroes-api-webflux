@@ -4,8 +4,6 @@
 
 Projeto de uma API reativa com Spring Boot, Spring WebFlux, library reativa Reactor, banco DynamoDB, testes unitários com JUnit, Postman e Swagger.
 
-
-
 #### AWS CLI: versão 2
 
 Links de referência que me ajudaram na configuração da AWS CLI
@@ -51,3 +49,36 @@ https://documenter.getpostman.com/view/11187410/TzCL9UDd
 
 
 
+#### Testes JUnit
+
+```java
+	@Test
+    public void getOneHeroeById() {
+        webTestClient.get().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"), "12")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody();
+    }
+
+    @Test
+    public void getOneHeronotFound() {
+        webTestClient.get().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"), "10")
+                .exchange()
+                .expectStatus().isNotFound();
+    }
+
+    @Test
+    public void deleteHero() {
+        webTestClient.delete().uri(HEROES_ENDPOINT_LOCAL.concat("/{id}"), "12")
+                .accept(MediaType.APPLICATION_JSON)
+                .exchange()
+                .expectStatus().isNotFound()
+                .expectBody(Void.class);
+    }
+```
+
+#### Swagger
+
+![](.img/04.png)
+
+![](.img/05.png)
