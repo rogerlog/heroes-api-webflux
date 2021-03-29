@@ -6,3 +6,26 @@ Projeto de uma API reativa com Spring Boot, Spring WebFlux, library reativa Reac
 
 
 
+#### AWS CLI: versão 2
+
+Links de referência que me ajudaram na configuração da AWS CLI
+
+- https://docs.aws.amazon.com/pt_br/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+- https://docs.aws.amazon.com/pt_br/elasticbeanstalk/latest/dg/eb-cli3-install.html
+
+#### DynamoDB local
+
+https://docs.aws.amazon.com/pt_br/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html
+
+Para iniciar o DynamoDB em seu computador, abra uma janela de prompt de comando, vá até o diretório onde você extraiu o `DynamoDBLocal.jar` e insira o seguinte comando.
+
+```shell
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+```
+
+Acessando as tabelas
+
+```shell
+aws dynamodb list-tables --endpoint-url http://localhost:8000
+```
+
